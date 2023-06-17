@@ -1,0 +1,179 @@
+{% block css %}
+<style>
+    .navbar {
+        background-color: black !important;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color:wheat;
+        min-width: 160px;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        z-index: 1;
+        min-width: max-content;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #928e8e;
+        color: black;
+    }
+</style>
+{% endblock %}
+
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a href="/" class="navbar-brand">
+            <img class="rounded-circle float-left" id="logo" src="https://mscs.dac.gov.in/images/emb.png" width="50" height="50" alt="CoolBrand">
+        </a>
+        <button class="navbar-toggler ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="color: white;">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto">
+                <a href="/" id="clickid1" class="nav-item nav-link text-white ">Home</a>
+
+                <div class="dropdown">
+                    <a href="#" id="clickid2" class="nav-item nav-link text-white dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Chart
+                    </a>
+                    <div class="dropdown-content" aria-labelledby="clickid2">
+                        <li style="padding-bottom: 5px;"><a href="/state-wise-chart">State-wise Chart</a></li>
+                        <li style="padding-bottom: 5px;"><a href="/year-wise-chart">Year-wise Chart</a></li>
+                        <li style="padding-bottom: 5px;"><a href="/type-wise-chart">Type-wise Chart</a></li>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" id="clickid3" class="nav-item nav-link text-white dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Reg.Societies
+                    </a>
+                    <div class="dropdown-content" aria-labelledby="clickid3">
+                        <li style="padding-bottom: 5px;"><a href="/state-wise">State-wise List</a></li>
+                        <li style="padding-bottom: 5px;"><a href="/all-reg-society">All Reg. Societiec(pdf)</a></li>
+                        <li style="padding-bottom: 5px;"><a href="/society-before-1986">Societies Registered before 1986</a></li>
+                        <li style="padding-bottom: 5px;"><a href="/calender-wise">Calender-wise List</a></li>
+                        <li style="padding-bottom: 5px;"><a href="/financial-wise">Financial-wise List</a></li>
+                    </div>
+                </div>
+
+
+                <div class="dropdown">
+                    <a href="#" id="clickid4" class="nav-item nav-link text-white dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Forms
+                    </a>
+                    <div class="dropdown-content" aia-labelledby="clickid4">
+                        <li style="padding-bottom: 5px;"><a href="#">Form I </a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">Forms II</a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">Forms III</a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">Forms IV</a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">Forms V</a></li>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" id="clickid5" class="nav-item nav-link text-white dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        MSCS Act
+                    </a>
+                    <div class="dropdown-content" aria-labelledby="clickid5">
+                        <li style="padding-bottom: 5px;"><a href="#">MSCS Act 2002 </a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">MSCS Rule 2002</a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">Check List</a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">Model By-laws</a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">National Policies on Cooperative 2002</a></li>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <a href="#" id="clickid6" class="nav-item nav-link text-white dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Application
+                    </a>
+                    <div class="dropdown-content" aria-labelledby="clickid6">
+                        <li style="padding-bottom: 5px;"><a href="#">Received Application</a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">Status of Application</a></li>
+                    </div>
+                </div>
+
+                
+
+                <div class="dropdown">
+                    <a href="#" id="clickid8" class="nav-item nav-link text-white dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Reports
+                    </a>
+                    <div class="dropdown-content" aria-labelledby="clickid8">
+                        <li style="padding-bottom: 5px;"><a href="#">All Reg Societies </a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">Registered Users</a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">Filed Annual Returns Online</a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">Annual Returns : Offline</a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">Reminder Message</a></li>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" id="clickid9" class="nav-item nav-link text-white dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Liquidation
+                    </a>
+                    <div class="dropdown-content" aria-labelledby="clickid9">
+                        <li style="padding-bottom: 5px;"><a href="#">Societies under Liquidation</a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">Liquidation Process Initiated</a></li>
+                    </div>
+                </div>
+
+                
+                <div class="dropdown">
+                    <a href="#" id="clickid7" class="nav-item nav-link text-white dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Login/Signup
+                    </a>
+                    <div class="dropdown-content" aria-labelledby="clickid7">
+                        <li style="padding-bottom: 5px;"><a href="#">New User Registration</a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">User Login</a></li>
+                        <li style="padding-bottom: 5px;"><a href="#">Admin User</a></li>
+                    </div>
+                </div>
+
+                <a href="/bank-list" id="clickid1" class="nav-item nav-link text-white ">Banks</a>
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+{% block js %}
+<script>
+    // Add event listener for hover instead of click
+    document.addEventListener("DOMContentLoaded", function () {
+        const dropdowns = document.querySelectorAll(".dropdown");
+
+        dropdowns.forEach(function (dropdown) {
+            dropdown.addEventListener("mouseover", function () {
+                this.querySelector(".dropdown-content").style.display = "block";
+            });
+
+            dropdown.addEventListener("mouseout", function () {
+                this.querySelector(".dropdown-content").style.display = "none";
+            });
+        });
+    });
+</script>
+{% endblock %}
+
+
+

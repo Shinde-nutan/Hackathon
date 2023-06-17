@@ -1,0 +1,65 @@
+{% extends 'base.html' %} 
+
+{% block css %}
+<style>
+    .con {
+        background-color: wheat;
+        min-height: 75vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .table-design {
+        border-collapse: collapse;
+        width: 100%;
+        margin: auto;
+        padding-left: 40%;
+    }
+    
+    .table-design thead th {
+        background-color: #000000;
+        color: white;
+        border: 1px solid #000000;
+        padding: 8px;
+    }
+
+    .table-design tbody tr {
+        background-color: #f4d867;
+    }
+    
+    .table-design tbody td {
+        border: 1px solid #000000;
+        padding: 8px;
+    }
+
+    .table-design tbody tr:hover {
+        background-color: #ddd;
+    }
+</style>
+{% endblock %}
+
+{% block title %}
+Calendar-Year-wise
+{% endblock %}
+
+
+{% block body %}
+<div class="con text-center">
+    <h1 class="m-4">Calendar Year-wise </h1>
+    <form method="POST">
+        <label class="text-black-50" for="state"><b>Select State:</b></label>
+        <select name="state" id="state">
+            {% for state in states_list %}
+            <option value="{{ state }}">{{ state }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+    <div class="text-center table-design" style="padding-top: 15px;">
+        {% if table_html %}
+        {{ table_html|safe }}
+        {% endif %}
+    </div>
+</div>  
+{% endblock %}

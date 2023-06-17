@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block css %}
+
+    <style>
+        .con{
+            background-color:wheat;
+            padding-bottom: 20px;
+            min-height: 75vh;
+        }
+        table {
+            background-color:#f4d867;
+            width: 50%;
+            margin: 0 auto;
+            padding-bottom: 20px;
+            overflow-x: scroll;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+        }
+        th {
+            background-color: black;
+            color: white;
+        }
+        
+        tr:hover {
+            background-color: #ddd;
+        }
+        tr {
+            border: 2px solid black;
+        }
+    </style>
+{% endblock %}
+
+
+{% block title %}
+Societies-Registered-Before-1986
+{% endblock %}
+
+
+{% block body %}
+<div class="con text-center">
+    <h1 class="m-4">Societies Registered Before 1986</h1>
+    {{ table | safe }}
+
+</div>
+{% endblock %}

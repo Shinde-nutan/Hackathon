@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="text-center" style="background-color: wheat;">
+    <h1 class="mt-4">Year-wise Count of Registered Societies</h1>
+
+    <!-- Add a container for the chart -->
+    <div id="chart-container" style="background-color: wheat">
+        {{ chart_html|safe }}
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+    <script>
+    {{ chart_html|safe }}
+    </script>
+{% endblock %}

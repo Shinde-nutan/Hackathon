@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block css %}
+<style>
+    .con {
+        background-color: wheat;
+        min-height: 75vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 5px;
+    }
+    
+    .table-design {
+        overflow-x: scroll;
+        border-collapse: collapse;
+        width: 100%;
+        margin: auto;
+        padding-left: auto;
+    }
+    
+    .table-design thead th {
+        background-color: #000000;
+        color: white;
+        border: 1px solid #000000;
+        padding: 8px;
+    }
+
+    .table-design tbody tr {
+        background-color: #f4d867;
+    }
+    
+    .table-design tbody td {
+        border: 1px solid #000000;
+        padding: 8px;
+    }
+
+    .table-design tbody tr:hover {
+        background-color: #ddd;
+    }
+</style>
+{% endblock %}
+
+{% block title %}
+All-Register-Society
+{% endblock %}
+
+
+{% block body %}
+<div class="con text-center">
+    <h1 class="m-4">All Register Society</h1>
+    <button id="exportBtn">Export to PDF</button>
+    <div class="text-center table-design" >
+        {% if table %}
+        {{ table | safe }}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+    // Function to export the table to PDF
+    function exportTableToPDF() {
+        const doc = new jsPDF();
+        doc.autoTable({ html: '.table-design' });
+        doc.save('table.pdf');
+    }
+
+    // Attach click event to the export button
+    const exportBtn = document.getElementById('exportBtn');
+    exportBtn.addEventListener('click', exportTableToPDF);
+</script>
+{% endblock %}

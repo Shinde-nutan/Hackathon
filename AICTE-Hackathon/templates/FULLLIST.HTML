@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Full List
+{% endblock %}
+
+{% block body %}
+<h1>Full List of Societies</h1>
+<table class="mGrid" cellspacing="0" id="" style=" width: max-content; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th>Name of Society</th>
+            <th>State</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for society in society_list %}
+        <tr>
+            <td>{{ society[0] }}</td>
+            <td>{{ society[1] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% block css %}
+<style>
+    .main-section {
+        position: fixed;
+        z-index: -1;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        width: 100vw;
+        overflow: hidden;
+    }
+    .events {
+        padding: 50px 0;
+    }
+    .events-item {
+        background-color:wheat;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+
+
+</style>
+{% endblock %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block body %}
+<section class="main-section">
+    <img src="static\img\soft-color-vintage-pastel-abstract-watercolor-grunge-background-colored-shades-white-yellow-dark-orange-color-illustration-126598078-transformed.webp"
+        style="height: 100%; width: 100%;">
+
+</section>
+<section class="sub-section">
+    <div class="p-4">
+        <div class="main-content">
+            
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 text-center">
+                    <img class="rounded-circle" src="https://mscs.dac.gov.in/images/MSCS_LOGO.png" style="width: 90px; height: 60px;">
+                </div>
+                <div class="col-12 text-center">
+                    <h2>Multi-State Co-Operative Societies</h2>
+                    <p class="mt-0"><b>Ministry of Cooperation, Govt. of India</b></p>
+                </div>
+            </div>
+                        
+            
+            <div class="row ">
+                <div class="col-12 col-md-8">
+                    <h3>Multi State Cooperative Societies ACT, 2002 </h3>
+                    <hr style="color: black; height: 3px;">
+                    <p>
+                        An Act to consolidate and amend the law relating to co-operative societies, with objects not
+                        confined to one State and serving the interests of members in more than one State, to facilitate
+                        the voluntary formation and democratic functioning of co-operatives as people's institutions
+                        based on self-help and mutual aid and to enable them to promote their economic and social
+                        betterment and to provide functional autonomy ,was being felt necessary by the various
+                        cooperative societies, and federation of various cooperative societies as well as by the
+                        Government. In order to achieve the objective
+                        <strong>The Multi State Cooperative Societies Bill</strong>was introduced in the Parliament.The
+                        bill having been passed by both the Houses of Parliament received the assent of the President on
+                        3rd July 2002 and it came on the Statute Book as The Multi State Cooperative Societies ACT 2002
+                        (39 of 2002).
+                    </p>
+                </div>
+                <div class="col-12 col-md-4  mt-4 mt-sm-0">
+                    <h3> News/Events </h3>
+                    <hr style="color: black; height: 3px;">
+                    <div class="container">
+                        <div class="ticker">
+                            <div class="news">
+                                <marquee class="news-content" height="150px" direction="up" scrolldelay="100" scrollamount="3">
+                                    <ul>
+                                        <li style="padding-bottom: 5px;"><a href="#">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</a></li>
+                                        <li style="padding-bottom: 5px;"><a href="#">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</a></li>
+                                        <li style="padding-bottom: 5px;"><a href="#">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</a></li>
+                                        <li style="padding-bottom: 5px;"><a href="#">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</a></li>
+                                    </ul>
+                                </marquee>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="events">
+        <div class="container">
+            <div class="row">  
+                <div class="col-md-4" >
+                    <div class="events-item">
+                        <h3>Latest Hearings</h3>
+                        <p>{% for society in society_data %}
+                            {{ society[0] }},{{ society[1] }}
+                            <hr style="color: black; height: 2px;">
+                            {% endfor %}</p>
+                        <a href="/full-list">
+                            <strong style="color: black; text-decoration: underline; float: right; font-weight: bold;">Read More</strong>
+                        </a><br>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" >
+                    <div class="events-item">
+                        <h3>Latest Certificates</h3>
+                        <p>{% for society in society_data %}
+                        {{ society[0] }},{{ society[1] }}
+                        <hr style="color: black; height: 2px;">
+                        {% endfor %}</p>
+                        <a href="/full-list">
+                            <strong style="color: black; text-decoration: underline; float: right; font-weight: bold;">Read More</strong>
+                        </a><br>
+                    </div>
+                </div>
+
+                <div class="col-md-4" >
+                    <div class="events-item">    
+                        <h3>Latest Order Sheet</h3>
+                        <p>{% for society in society_data %}
+                            {{ society[0] }},{{ society[1] }}
+                            <hr style="color: black; height: 2px;">
+                            {% endfor %}</p>
+                        <a href="/full-list">
+                            <strong style="color: black; text-decoration: underline; float: right; font-weight: bold;">Read More</strong>
+                        </a><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}
